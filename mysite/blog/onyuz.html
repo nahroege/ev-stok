@@ -1,0 +1,23 @@
+<table border="1">
+    <tr><td><a href="/urun-ekle/">Ürün Ekle</a></td></tr>
+    <tr>
+        <th>Sıra</th>
+        <th><a href="?siralama=1">Adi<a/></th>
+        <th><a href="?siralama=2">Soyadi</a></th>
+      
+    </tr>
+
+    {% for urun in MyModel %}
+    <tr>
+        <td>{{ urun_kodu.start_index|add:forloop.counter }}</td>
+        <td>{{ urun_kodu }}</td>
+        <td>{{ urun_adi }}</td>
+        <td>{{ adet }}</td>
+        <td>{{ son.son_kullanma }}</td>
+
+
+        <td><a href="/urun-ekle/?id={{ urun}}">Düzenle </a><a href="/urun-sil/?id={{ urun_kodu }}">Sil</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
